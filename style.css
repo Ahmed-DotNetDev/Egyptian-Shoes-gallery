@@ -1,0 +1,178 @@
+/* Reset css to all page */
+
+* {
+    padding: 0px;
+    margin: 0px;
+    font-family: sans-serif;
+}
+
+/* Style body */
+
+body {
+    background: linear-gradient(#111, #222);
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Style container */
+
+.container {
+    background-color: rgba(255, 255, 255, 0.1);
+    width: 80%;
+    height: 80%;
+    border-radius: 12px;
+}
+
+/* Draw a circle */
+
+body::after {
+    content: '';
+    height: 100%;
+    width: 100%;
+    background: red;
+    clip-path: circle(40% at right 70%);
+    position: absolute;
+    z-index: -1;
+}
+
+/* Style nav */
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 80%;
+    margin: auto;
+    padding: 20px 0px;
+}
+
+/* Style the logo text */
+
+.logo {
+    text-decoration: none;
+    color: #fff;
+    font-size: 29px;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+/* Style hover for text logo */
+
+.logo:hover {
+    text-shadow: 2px 2px rgb(170, 3, 3);
+    transition: .6s;
+}
+
+/* Style list */
+
+nav ul li {
+    display: inline-block;
+    margin: 0px 6px;
+}
+
+/* Style links */
+
+nav ul li a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 19px;
+    font-weight: 500;
+}
+
+/* Style for hover navigations */
+
+nav ul li a:hover {
+    color: purple;
+    transition: .5s;
+}
+
+/* Style content */
+
+.content {
+    display: flex;
+    height: 100%;
+    width: 80%;
+    justify-content: space-between;
+    align-items: center;
+    overflow: hidden;
+    margin: auto;
+}
+
+/* Style text inside page */
+
+.content .text {
+    color: #fff;
+    width: 40%;
+}
+
+/* Style header h2 */
+
+.content .text h2 {
+    font-size: 35px;
+    font-weight: 700;
+    text-transform: uppercase;
+    line-height: 40px;
+    letter-spacing: 2px;
+}
+
+/* Style paragraph */
+
+.content .text p {
+    font-size: 17px;
+    line-height: 25px;
+    letter-spacing: .5px;
+    width: 280px;
+    margin: 10px 0px;
+}
+
+/* Style image container */
+
+.content .images {
+    width: 44%;
+}
+
+/* Style image */
+
+.content .images img {
+    width: 400px;
+}
+
+.content .images img:hover {
+    transition: .6s;
+    filter: drop-shadow(16px 16px 20px rgb(216, 40, 40)) invert(80%);
+    transition: .8s;
+}
+
+/* Media quiry for responsive design */
+
+@media (min-width:950px) and (max-width:1150) {
+    .content .images img {
+        width: 330px;
+    }
+}
+
+@media (max-width:950px) {
+
+    .content,
+    nav {
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .content .images,
+    .content .text {
+        width: 70%;
+        height: 50%;
+    }
+
+    body::after {
+        clip-path: circle(50% at bottom);
+    }
+
+    .logo {
+        margin: 20px 0px;
+    }
+}
